@@ -1,0 +1,26 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "target": "es6",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "outDir": "build",
+        "removeComments": true,
+        "rootDir": "src",
+        "sourceMap": false,
+        "watch": false
+    },
+    "include": [
+        "src/cleric.ts",
+        "src/rogue.ts",
+        "src/warrior.ts",
+        "src/wizard.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
