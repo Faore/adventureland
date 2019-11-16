@@ -12,7 +12,8 @@
         "removeComments": true,
         "rootDir": "src",
         "sourceMap": false,
-        "watch": false
+        "watch": false,
+        "strict": true
     },
     "include": [
         "src/cleric.ts",
