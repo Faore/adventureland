@@ -1,5 +1,5 @@
 // Valid options here are cleric, rogue, wizard, warrior
-const character_class = 'cleric';
+const character_class = 'warrior';
 
 import(`http://localhost:8080/${character_class}.js`).then((module) => {
 	bots[character_class].run();
