@@ -5,12 +5,15 @@ export interface Entity {
   x: number;
   y: number;
   target: number;
+  type: string;
 }
 
 export interface ICharacter extends Entity {
   rip: Boolean;
-  hp: number;
-  max_hp: number;
+}
+
+export interface Party {
+  [key: string]: ICharacter;
 }
 
 export interface IMonster extends Entity {}
@@ -70,6 +73,11 @@ declare global {
     path_check?: boolean;
     type?: string;
   }): string;
+  function get_targeted_monster(): Entity;
+  function get_active_characters(): {
+    [key: string]: "self" | "starting" | "active" | "code";
+  };
+  function get_party(): Party;
   function get_targeted_monster(): IMonster;
   function in_attack_range(target: Entity): boolean;
   function is_moving(entity: Entity): boolean;

@@ -7,6 +7,7 @@ module.exports = {
     rogue: "./src/classes/rogue.ts",
     warrior: "./src/classes/warrior.ts",
     wizard: "./src/classes/wizard.ts",
+    base_character: "./src/classes/base_character.ts",
   },
   module: {
     rules: [
