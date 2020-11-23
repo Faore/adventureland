@@ -8,12 +8,38 @@ export interface Entity {
 }
 
 export interface ICharacter extends Entity {
-	rip: Boolean,
+	rip: boolean,
 	hp: number,
 	max_hp: number
 }
 
 export interface Monster extends Entity {}
+
+export interface IHit {
+	source: string,
+	actor: string,
+	target: string,
+	damage: number,
+	pid: string,
+	heal: number,
+	crit: boolean,
+	kill: boolean,
+	evade: boolean,
+	miss: boolean,
+	avoid: boolean,
+	poison: boolean,
+	freeze: boolean,
+	stun: boolean,
+	reflect: number,
+	dreturn: number,
+	trigger: string,
+	condition: string,
+	sneak: boolean,
+	stacked: Array<string>,
+	mobbing: number,
+	unintentional: boolean,
+	aoe: boolean
+}
 
 declare global {
     interface Window {
