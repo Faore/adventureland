@@ -16,7 +16,37 @@ export interface Party {
   [key: string]: ICharacter;
 }
 
-export interface Monster extends Entity {}
+export interface IMonster extends Entity {}
+
+export interface IHit {
+  source: string;
+  actor: string;
+  target: string;
+  damage: number;
+  pid: string;
+  heal: number;
+  crit: boolean;
+  kill: boolean;
+  evade: boolean;
+  miss: boolean;
+  avoid: boolean;
+  poison: boolean;
+  freeze: boolean;
+  stun: boolean;
+  reflect: number;
+  dreturn: number;
+  trigger: string;
+  condition: string;
+  sneak: boolean;
+  stacked: Array<string>;
+  mobbing: number;
+  unintentional: boolean;
+  aoe: boolean;
+}
+
+export interface IGame {
+  on(event: string, callback?: any): void;
+}
 
 declare global {
   interface Window {
@@ -28,6 +58,7 @@ declare global {
   }
 
   var character: ICharacter;
+  var game: IGame;
 
   function attack(target: Entity): void;
   function can_attack(target: Entity): boolean;
@@ -41,12 +72,13 @@ declare global {
     no_target?: boolean;
     path_check?: boolean;
     type?: string;
-  }): Entity;
+  }): string;
   function get_targeted_monster(): Entity;
   function get_active_characters(): {
     [key: string]: "self" | "starting" | "active" | "code";
   };
   function get_party(): Party;
+  function get_targeted_monster(): IMonster;
   function in_attack_range(target: Entity): boolean;
   function is_moving(entity: Entity): boolean;
   function is_in_range(entity: Entity): boolean;
@@ -56,9 +88,11 @@ declare global {
   function use_hp_or_mp(): void;
   function heal(entity: Entity): void;
   function get_player(player: string): ICharacter;
-  function get_monster(monster: number): Monster;
+  function get_monster(monster: number | string): IMonster;
   function use_skill(skill: string): void;
   function use_skill(skill: string, entity: Entity): void;
+  function get_nearest_hostile(): string;
+  function smart_move(x: number, y: number): void;
 }
 
 export type SkillName =
