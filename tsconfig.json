@@ -16,10 +16,11 @@
         "strict": true
     },
     "include": [
-        "src/cleric.ts",
-        "src/rogue.ts",
-        "src/warrior.ts",
-        "src/wizard.ts"
+        "src/classes/cleric.ts",
+        "src/classes/ranger.ts",
+        "src/classes/rogue.ts",
+        "src/classes/warrior.ts",
+        "src/classes/wizard.ts"
     ],
     "exclude": [
         "node_modules"
