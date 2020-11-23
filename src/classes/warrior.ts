@@ -3,7 +3,7 @@
 // If you don't know how to code, don't worry, It's easy.
 // Just set attack_mode to true and ENGAGE!
 
-import { Entity, ICharacter } from './definitions/adventureland'
+import { Entity, ICharacter } from './../definitions/adventureland'
 
 var attack_mode=true
 

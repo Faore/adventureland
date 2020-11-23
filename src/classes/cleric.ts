@@ -1,4 +1,4 @@
-import { Entity, ICharacter } from './definitions/adventureland'
+import { Entity, ICharacter } from './../definitions/adventureland'
 
 game_log("Cleric Loaded.");
 

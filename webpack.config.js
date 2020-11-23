@@ -2,11 +2,11 @@ const Path = require('path');
 
 module.exports = {
   entry: {
-    cleric: './src/cleric.ts',
-    ranger: './src/ranger.ts',
-    rogue: './src/rogue.ts',
-    warrior: './src/warrior.ts',
-    wizard: './src/wizard.ts',
+    cleric:  './src/classes/cleric.ts',
+    ranger:  './src/classes/ranger.ts',
+    rogue:   './src/classes/rogue.ts',
+    warrior: './src/classes/warrior.ts',
+    wizard:  './src/classes/wizard.ts'
   },
   module: {
     rules: [{
