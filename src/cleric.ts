@@ -15,33 +15,33 @@ class Cleric {
         if(this.members_needing_healing(this.party_members).length > 1 && in_attack_range(this.leader)) {
             use_skill("partyheal");
         }
-    
+
         var player_to_heal = this.min_by_hp(this.members_needing_healing(this.party_members));
-    
+
         if (!in_attack_range(this.leader)) {
             move(
                 character.x+(this.leader.x-character.x)/2,
                 character.y+(this.leader.y-character.y)/2
                 );
         }
-        
+
         if (player_to_heal !== null) {
             heal(player_to_heal);
         }
-    
+
         if (this.members_needing_healing(this.party_members).length === 0 && get_monster(this.leader.target)) {
             use_skill("curse", get_monster(this.leader.target));
         }
-    
+
         use_hp_or_mp();
-        loot();    
+        loot();
     }
-    
+
     public members_needing_healing(party_members: Array<ICharacter>) : Array<ICharacter> {
         return party_members.filter(this.needs_healing);
     }
 
-    
+
     public needs_healing(member: ICharacter) {
         return member.hp < member.max_hp - 150
     }
@@ -54,7 +54,7 @@ class Cleric {
                 min = object
             }
         });
-    
+
         return min;
     }
 
