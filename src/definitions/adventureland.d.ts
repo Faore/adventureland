@@ -3,11 +3,14 @@ export interface Entity {
     hp: number;
     max_hp: number;
     x: number;
-    y: number;
+	y: number;
+	target: number;
 }
 
 export interface ICharacter extends Entity {
-    rip: Boolean
+	rip: Boolean,
+	hp: number,
+	max_hp: number
 }
 
 export interface Monster extends Entity {}
@@ -35,7 +38,12 @@ declare global {
     function loot(): void;
     function move(x:number, y:number): void;
     function set_message(text:string, color?: string): void;
-    function use_hp_or_mp(): void;
+	function use_hp_or_mp(): void;
+	function heal(entity: Entity): void;
+	function get_player(player: string): ICharacter;
+	function get_monster(monster: number): Monster;
+	function use_skill(skill: string): void;
+	function use_skill(skill: string, entity: Entity): void;
 }
 
 export type SkillName = "mentalburst" | 
