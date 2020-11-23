@@ -1,28 +1,23 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "lib": [
-            "es2015",
-            "dom"
-        ],
-        "target": "es6",
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "outDir": "build",
-        "removeComments": true,
-        "rootDir": "src",
-        "sourceMap": false,
-        "watch": false,
-        "strict": true
-    },
-    "include": [
-        "src/classes/cleric.ts",
-        "src/classes/ranger.ts",
-        "src/classes/rogue.ts",
-        "src/classes/warrior.ts",
-        "src/classes/wizard.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "compileOnSave": true,
+  "compilerOptions": {
+    "lib": ["es2015", "dom"],
+    "target": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "build",
+    "removeComments": true,
+    "rootDir": "src",
+    "sourceMap": false,
+    "watch": false,
+    "strict": true
+  },
+  "include": [
+    "src/classes/cleric.ts",
+    "src/classes/ranger.ts",
+    "src/classes/rogue.ts",
+    "src/classes/warrior.ts",
+    "src/classes/wizard.ts"
+  ],
+  "exclude": ["node_modules"]
 }
