@@ -15,7 +15,7 @@ setInterval(function () {
 
   var target = get_targeted_monster();
   if (!target) {
-    target = get_nearest_monster({ min_xp: 100, max_att: 120 });
+    target = get_monster(get_nearest_monster({ min_xp: 100, max_att: 120 }));
     if (target) change_target(target);
     else {
       set_message("No Monsters");

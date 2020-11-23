@@ -26,7 +26,7 @@ class Wizard {
   public character_loop() {
     use_hp_or_mp();
     loot();
-
+    
     if (!this.attack_mode || character.rip || is_moving(character)) return;
 
     if (!this.target) {
