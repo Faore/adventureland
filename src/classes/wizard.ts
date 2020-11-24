@@ -3,14 +3,14 @@ import { IHit, ICharacter, IMonster } from "../definitions/adventureland";
 game_log("Wizard Loaded.");
 
 class Wizard {
-  public leader: ICharacter = get_player("BananaBoss");
+  public leader: ICharacter = get_player("LeBanana");
   public party_members: Array<ICharacter> = [
     this.leader,
     character,
-    get_player("LeBanana"),
+    get_player("BananaBoss"),
   ];
   public target?: IMonster;
-  public attack_mode: boolean = false;
+  public attack_mode: boolean = true;
 
   public run() {
     game_log("Wizard Running.");
@@ -26,7 +26,7 @@ class Wizard {
   public character_loop() {
     use_hp_or_mp();
     loot();
-    
+
     if (!this.attack_mode || character.rip || is_moving(character)) return;
 
     if (!this.target) {
@@ -61,7 +61,7 @@ class Wizard {
       hit.actor == this.leader.id &&
       get_monster(hit.target)
     ) {
-      this.target = get_player(hit.target);
+      this.target = get_monster(hit.target);
     }
   }
 }
